@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { CustomerComponentComponent } from './customer-component/customer-component.component';
+import { SumarComponent } from './components/sumar/sumar.component';
+import { CronometroComponent } from './components/cronometro/cronometro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerComponentComponent
+    SumarComponent,
+    CronometroComponent
   ],
   imports: [
     BrowserModule,
