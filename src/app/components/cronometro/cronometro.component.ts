@@ -9,9 +9,11 @@ export class CronometroComponent implements OnInit {
 
   contador: number;
   interval: any;
+  mensaje: string;
 
   constructor() { 
     this.contador = 12;
+    this.mensaje = '';
    }
 
   ngOnInit(): void {
@@ -36,6 +38,14 @@ export class CronometroComponent implements OnInit {
 
   onChangeSelect($event:any) {
     console.log($event.target.value);
+  }
+
+  onMouseEnter() {
+    this.mensaje = "Estoy en el DIV";
+  }
+
+  onMouseOut() {
+    this.mensaje = "Estoy saliendo del DIV";
   }
 
 }

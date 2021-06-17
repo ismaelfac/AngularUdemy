@@ -4,6 +4,12 @@
         <button id="btn_start" class="btn btn-success" (click)="onStart($event)">Start</button>
         <button id="btn_reset" class="btn btn-success" (click)="onReset($event)">Reset</button>
     </div>
+    
+</div><br>
+<div class="cuadrado" (mouseenter)="onMouseEnter()" (mouseout)="onMouseOut()">
+    {{ mensaje }}
+</div><br>
+<div>
     <select (change)="onChangeSelect($event)">
         <option value="1">Uno</option>
         <option value="2">Dos</option>
