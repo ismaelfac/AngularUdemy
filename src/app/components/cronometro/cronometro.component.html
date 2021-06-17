@@ -1,1 +1,12 @@
-<p>cronometro works!</p>
+<div class="cronometro">
+    <p>{{contador}}</p>
+    <div>
+        <button id="btn_start" class="btn btn-success" (click)="onStart($event)">Start</button>
+        <button id="btn_reset" class="btn btn-success" (click)="onReset($event)">Reset</button>
+    </div>
+    <select (change)="onChangeSelect($event)">
+        <option value="1">Uno</option>
+        <option value="2">Dos</option>
+        <option value="3">Tres</option>
+    </select>
+</div>
