@@ -7,12 +7,14 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { SumarComponent } from './components/sumar/sumar.component';
 import { CronometroComponent } from './components/cronometro/cronometro.component';
+import { UploadPageComponent } from './components/upload-page/upload-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SumarComponent,
-    CronometroComponent
+    CronometroComponent,
+    UploadPageComponent
   ],
   imports: [
     BrowserModule,
