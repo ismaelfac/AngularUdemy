@@ -1,0 +1,13 @@
+.cronometro {
+    border: 2px solid violet;
+    padding: 10px;
+    width: 50px;
+    text-align: center;
+}
+
+.cuadrado {
+    width: 100px;
+    height: 100px;
+    background-color: teal;
+    border-radius: 5px solid gray;
+}
