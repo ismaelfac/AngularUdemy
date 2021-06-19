@@ -8,13 +8,15 @@ import { environment } from '../environments/environment';
 import { SumarComponent } from './components/sumar/sumar.component';
 import { CronometroComponent } from './components/cronometro/cronometro.component';
 import { UploadPageComponent } from './components/upload-page/upload-page.component';
+import { CalculatorComponent } from './components/calculator/calculator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SumarComponent,
     CronometroComponent,
-    UploadPageComponent
+    UploadPageComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,

@@ -9,6 +9,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class UploadPageComponent implements OnInit {
   public previsualizacion: string = '';
   public archivos: any = [];
+  public loading: boolean = false;
   constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
@@ -18,7 +19,6 @@ export class UploadPageComponent implements OnInit {
     const archivoCapturado = event.target.files[0];
     this.extraerBase64(archivoCapturado).then((imagen: any) => {
       this.previsualizacion = imagen.base
-      console.log(imagen);
     });
     this.archivos.push(archivoCapturado);
   }
@@ -40,4 +40,22 @@ export class UploadPageComponent implements OnInit {
       }
       return $event;
   });
+
+  clearImage(): any {
+    this.previsualizacion = '';
+    this.archivos = [];
+  }
+  subirArchivo(): any {
+    try {
+      this.loading = true;
+      const formData = new FormData();
+      this.archivos.forEach((archivo :any) => {
+        formData.append('files', archivo);
+        console.log(archivo);
+        this.loading = false;
+      })
+    } catch (error) {
+      this.loading = false;
+    }
+  }
 }
