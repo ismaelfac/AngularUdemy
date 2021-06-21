@@ -1,1 +1,21 @@
-<p>template works!</p>
+<form #formularioRegistro="ngForm" (ngSubmit)="onSubmit(formularioRegistro.value)">
+    <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" name="name" id="name" class="form-control" ngModel >
+    </div>
+    <div class="form-group">
+        <label for="lastName">Apellidos</label>
+        <input type="text" name="lastName" id="lastName" class="form-control" ngModel >
+    </div>
+    <div class="form-group">
+        <label for="yearsOld">Edad</label>
+        <input type="text" name="yearsOld" id="yearsOld" class="form-control" ngModel >
+    </div>
+    <div class="form-group">
+        <label for="address">Direccion</label>
+        <input type="text" name="address" id="address" class="form-control" ngModel >
+    </div>
+    <input type="submit" value="Enviar" class="btn btn-block btn-primary">    
+</form>
+
+{{ formularioRegistro.value | json }}
