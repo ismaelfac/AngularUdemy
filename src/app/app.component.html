@@ -1,3 +1,8 @@
+<div class="routes">
+  <a href="">Inicio</a>
+  <a [routerLink]="['/inmuebles']" routerLinkActive="active">Inmuebles</a>
+  <a [routerLink]="['/calculadora']" routerLinkActive="active">Otros</a>
+</div>
 <div>
-  <calculator></calculator>
+  <router-outlet></router-outlet>
 </div>

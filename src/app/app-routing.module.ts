@@ -1,7 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CalculatorComponent } from './components/calculator/calculator.component';
+import { ConditionComponent } from './components/estate/condition/condition.component';
+import { DetailsEstateComponent } from './components/estate/details-estate/details-estate.component';
+import { EstateComponent } from './components/estate/estate.component';
+import { GeneralDataComponent } from './components/estate/general-data/general-data.component';
+import { LocationComponent } from './components/estate/location/location.component';
+import { InterestedEstateComponent } from './components/interested-estate/interested-estate.component';
+import { OwnersComponent } from './components/owners/owners.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'inmuebles', component: EstateComponent },
+  { path: 'inmuebles/:inmuebleId', component: DetailsEstateComponent, children: [
+    { path: 'DatosGenerales', component: GeneralDataComponent },
+    { path: 'localizacion', component: LocationComponent },
+    { path: 'propietario', component: OwnersComponent },
+    { path: 'interesados', component: InterestedEstateComponent },
+    { path: 'Condiciones', component: ConditionComponent }
+  ]},
+  { path: 'calculadora', component: CalculatorComponent },
+  { path: '**', redirectTo: 'inmuebles'}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -9,6 +9,15 @@ import { SumarComponent } from './components/sumar/sumar.component';
 import { CronometroComponent } from './components/cronometro/cronometro.component';
 import { UploadPageComponent } from './components/upload-page/upload-page.component';
 import { CalculatorComponent } from './components/calculator/calculator.component';
+import { EstateComponent } from './components/estate/estate.component';
+import { OwnersComponent } from './components/owners/owners.component';
+import { InterestedEstateComponent } from './components/interested-estate/interested-estate.component';
+import { PropertiesCapturedComponent } from './components/properties-captured/properties-captured.component';
+import { GeneralDataComponent } from './components/estate/general-data/general-data.component';
+import { LocationComponent } from './components/estate/location/location.component';
+import { AreaComponent } from './components/estate/area/area.component';
+import { ConditionComponent } from './components/estate/condition/condition.component';
+import { DetailsEstateComponent } from './components/estate/details-estate/details-estate.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +25,16 @@ import { CalculatorComponent } from './components/calculator/calculator.componen
     SumarComponent,
     CronometroComponent,
     UploadPageComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    EstateComponent,
+    OwnersComponent,
+    InterestedEstateComponent,
+    PropertiesCapturedComponent,
+    GeneralDataComponent,
+    LocationComponent,
+    AreaComponent,
+    ConditionComponent,
+    DetailsEstateComponent
   ],
   imports: [
     BrowserModule,
