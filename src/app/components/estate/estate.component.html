@@ -1,8 +1,10 @@
 <div class="estates">
     <div class="property-information">
         <p>Inmuebles</p>
+        <button (click)="onClickCreateEstate()">Crear</button>
+        <button (click)="onClickAssets()">Inmuebles Activos</button>
     </div>
-    <div class="list-properties">
-        
+    <div class="list-properties" *ngFor="let item of estates">
+        <a href="">{{ item.title }} - {{ item.type }} <strong> Con {{ item.yearsConstruction }} años de antiguedad</strong></a>
     </div>
 </div>
