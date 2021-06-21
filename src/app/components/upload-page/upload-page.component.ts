@@ -24,26 +24,39 @@ export class UploadPageComponent implements OnInit {
     this.archivos.push(archivoCapturado);
   }
 
-  extraerBase64 = async ($event: any) => new Promise((resolve, reject) => {
-    try {
-      const unsafeImg = window.URL.createObjectURL($event);
-      const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
-      const reader = new FileReader();
-      reader.readAsDataURL($event);
-      reader.onload = () => {
-        resolve({
-          base: reader.result
-        });
-      };
-      reader.onerror = error => {
-        resolve({
-          base: null
-        });
-      };
-
-    } catch (e) {
-      return null;
-    }
+  extraerBase64 = async ($event: any) => 
+    new Promise(resolve => {
+      try {
+        const unsafeImg = window.URL.createObjectURL($event);
+        const image = this.sanitizer.bypassSecurityTrustUrl(unsafeImg);
+        const reader = new FileReader();
+        reader.readAsDataURL($event);
+        reader.onload = () => {
+          resolve({
+            base: reader.result
+          });
+        };
+      } catch (e) {
+        return null;
+      }
+      return $event;
   });
 
+  clearImage(): any {
+    this.previsualizacion = '';
+    this.archivos = [];
+  }
+  subirArchivo(): any {
+    try {
+      this.loading = true;
+      const formData = new FormData();
+      this.archivos.forEach((archivo :any) => {
+        formData.append('files', archivo);
+        console.log(archivo);
+        this.loading = false;
+      })
+    } catch (error) {
+      this.loading = false;
+    }
+  }
 }
