@@ -26,7 +26,7 @@ export class EstatesService {
    }
 
    assets(): Promise<Estate[]> {
-      const prom = new Promise<Estate[]>((resolve, reject) => {
+      const prom = new Promise<Estate[]>(resolve => {
         const arrTemp: Estate[] = [];
         for(let estate of this.estates) {
           if(estate.isActive) {
@@ -38,8 +38,8 @@ export class EstatesService {
       return prom;
    }
 
-  assetsV2(): Promise<Estate[]> {  //recomendado, para no bloquee el resto de componentes en caso se demore la respuesta del servidor
-    return new Promise((resolve, reject) => {
+  assetsV2(): Promise<Estate[]> {  //recomendado, para que no bloquee el resto de componentes en caso se demore la respuesta del servidor
+    return new Promise(resolve => {
       const arrTemp = this.estates.filter(estate => {
         return estate.isActive;
       });
@@ -48,7 +48,7 @@ export class EstatesService {
   }
 
   assetsV2compressed(): Promise<Estate[]> {
-    return new Promise((resolve, reject) => {
+    return new Promise(resolve => {
       resolve(this.estates.filter(estate => estate.isActive));
     });
   }

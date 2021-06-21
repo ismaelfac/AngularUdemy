@@ -18,6 +18,8 @@ import { LocationComponent } from './components/estate/location/location.compone
 import { AreaComponent } from './components/estate/area/area.component';
 import { ConditionComponent } from './components/estate/condition/condition.component';
 import { DetailsEstateComponent } from './components/estate/details-estate/details-estate.component';
+import { TemplateComponent } from './components/template/template.component';
+import { ModelComponent } from './components/model/model.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { DetailsEstateComponent } from './components/estate/details-estate/detai
     LocationComponent,
     AreaComponent,
     ConditionComponent,
-    DetailsEstateComponent
+    DetailsEstateComponent,
+    TemplateComponent,
+    ModelComponent
   ],
   imports: [
     BrowserModule,

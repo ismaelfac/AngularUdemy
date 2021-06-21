@@ -24,7 +24,7 @@ export class EstateComponent implements OnInit {
   async onClickAssets(): Promise<any> {
     try {
       console.log('evento onClickAssets');
-      this.estates = await this.estateService.assets();
+      this.estates = await this.estateService.assetsV2compressed();
     } catch (e) {
       console.log(e);
     }

@@ -7,7 +7,9 @@ import { EstateComponent } from './components/estate/estate.component';
 import { GeneralDataComponent } from './components/estate/general-data/general-data.component';
 import { LocationComponent } from './components/estate/location/location.component';
 import { InterestedEstateComponent } from './components/interested-estate/interested-estate.component';
+import { ModelComponent } from './components/model/model.component';
 import { OwnersComponent } from './components/owners/owners.component';
+import { TemplateComponent } from './components/template/template.component';
 
 const routes: Routes = [
   { path: 'inmuebles', component: EstateComponent },
@@ -19,6 +21,8 @@ const routes: Routes = [
     { path: 'Condiciones', component: ConditionComponent }
   ]},
   { path: 'calculadora', component: CalculatorComponent },
+  { path: 'modelosFormulario', component: ModelComponent },
+  { path: 'templatesFormulario', component: TemplateComponent },
   { path: '**', redirectTo: 'inmuebles'}
 ];
 
