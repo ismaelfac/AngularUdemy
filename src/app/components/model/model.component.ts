@@ -16,7 +16,9 @@ export class ModelComponent implements OnInit {
           Validators.required
         ]),
         apellido: new FormControl(''),
-        edad: new FormControl(''),
+        edad: new FormControl('', [
+          this.yearsOldValidator
+        ]),
         dni: new FormControl('', [
           Validators.minLength(6),
           Validators.maxLength(10)
@@ -33,9 +35,11 @@ export class ModelComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  yearsOldValidator(formControl: any) {
+  yearsOldValidator(formControl: any): any {
     const value = formControl.value;
-    console.log(value);
+    const max = 60;
+    const min = 18;
+    if(value >= min && value <= max) { return null }else{ return { yearsOldValidator: {min, max}}; } ;
   }
 
   onSubmit(): void {
