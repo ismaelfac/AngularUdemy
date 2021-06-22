@@ -1,4 +1,5 @@
 export class GeneralDataEstate{
+    EstateId: string;
     EstateType: string;
     Municipality: string;
     Stratum: string;
@@ -9,7 +10,8 @@ export class GeneralDataEstate{
     Tracing: boolean;
     newEstate: boolean;
 
-    constructor(eEstateType: string, eMunicipality: string, eStratum: string, eBedrooms: string, eBathrooms: string, eEstateDestination: string, eExclusiveness: boolean, eTracing: boolean, eNewEstate: boolean ){
+    constructor(eEstateId: string,eEstateType: string, eMunicipality: string, eStratum: string, eBedrooms: string, eBathrooms: string, eEstateDestination: string, eExclusiveness: boolean, eTracing: boolean, eNewEstate: boolean ){
+        this.EstateId = eEstateId;
         this.EstateType = eEstateType;
         this.Municipality = eMunicipality;
         this.Stratum = eStratum;

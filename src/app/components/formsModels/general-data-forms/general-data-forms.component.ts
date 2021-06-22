@@ -55,7 +55,7 @@ export class GeneralDataFormsComponent implements OnInit {
 
   onSubmit(): void {
     console.log(this.frmGeneralData.value);
-    this.generalsDataService.create(new GeneralDataEstate('Apto','Barranquilla','2','2','1','Arriendo',true, true, true));
+    this.generalsDataService.create(new GeneralDataEstate('1','Apto','Barranquilla','2','2','1','Arriendo',true, true, true));
   }
 
 }
