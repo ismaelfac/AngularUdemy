@@ -1,33 +1,56 @@
 <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="">Nombre</label>
-        <input type="text" name="nombre" formControlName="nombre" class="form-control">
-    </div>
-    <div class="form-group">
-        <label for="">Apellidos</label>
-        <input type="text" name="apellidos" formControlName="apellido" class="form-control">
-    </div>
-    <div class="form-group">
-        <label for="">Edad</label>
-        <input type="text" name="edad" formControlName="edad" class="form-control">
-    </div>
-    <div class="form-group">
-        <label for="">Email</label>
-        <input type="email" name="email" formControlName="email" class="form-control">
-    </div>
-    <div class="form-group">
-        <label for="">Dni</label>
-        <input type="text" name="dni" formControlName="dni" class="form-control">
-    </div>
-    <div class="form-group">
-        <label for="">Password</label>
-        <input type="password" name="password" formControlName="password" class="form-control">
-    </div>
-    <div class="form-group">
-        <label for="">Repite Password</label>
-        <input type="password" name="repitePassword" formControlName="repite_password" class="form-control">
-    </div>
-    <div class="d-grid gap-2 col-12 mx-auto">
-        <button class="btn btn-primary" type="submit">Enviar</button>
+    <div class="row">
+        <div class="col-8">
+            <div class="form-group">
+                <label for="">Nombre</label>
+                <input type="text" name="nombre" formControlName="nombre" class="form-control">
+                <div><p>Valido: {{ formulario.controls.nombre.valid }}</p></div>
+            </div>
+            <div class="form-group">
+                <label for="">Apellidos</label>
+                <input type="text" name="apellidos" formControlName="apellido" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Edad</label>
+                <input type="text" name="edad" formControlName="edad" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Email</label>
+                <input type="email" name="email" formControlName="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Dni</label>
+                <input type="text" name="dni" formControlName="dni" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Password</label>
+                <input type="password" name="password" formControlName="password" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Repite Password</label>
+                <input type="password" name="repitePassword" formControlName="repite_password" class="form-control">
+            </div><br>
+            <div class="d-grid gap-2 col-12 mx-auto">
+                <button class="btn btn-primary" type="submit" [disabled]="!formulario.valid">Enviar</button>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group">
+                <label for="">Formulario Valido </label>
+                <p>{{ formulario.valid | json }}</p>
+            </div>
+            <div class="form-group">
+                <label for="">Formulario Invalido </label>
+                <p>{{ formulario.invalid | json }}</p>
+            </div>
+            <div class="form-group">
+                <label for="">Formulario Dirty </label>
+                <p>{{ formulario.dirty | json }}</p>
+            </div>
+            <div class="form-group">
+                <label for="">Formulario Untouched </label>
+                <p>{{ formulario.untouched | json }}</p>
+            </div>
+        </div>
     </div>
 </form>
