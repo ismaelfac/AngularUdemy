@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { GeneralDataEstate } from 'src/app/models/generalDataEstate.models';
 import { GeneralsDataService } from 'src/app/services/generals-data.service';
@@ -9,7 +9,7 @@ import { GeneralsDataService } from 'src/app/services/generals-data.service';
   styleUrls: ['./general-data-forms.component.css']
 })
 export class GeneralDataFormsComponent implements OnInit {
-
+  @Input() EstateId: string = '';
   frmGeneralData: FormGroup;
   cmdEstateType: string = '';
   tipo_inmueble: [] = [];
@@ -54,7 +54,9 @@ export class GeneralDataFormsComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.frmGeneralData.value);
+    //'1','Apto','Barranquilla','2','2','1','Arriendo',true, true, true
+    console.log('Este es el Id: '+this.EstateId);
+    console.log(this.frmGeneralData.value.cmdEstateType);
     this.generalsDataService.create(new GeneralDataEstate('1','Apto','Barranquilla','2','2','1','Arriendo',true, true, true));
   }
 
