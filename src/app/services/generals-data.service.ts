@@ -9,7 +9,7 @@ export class GeneralsDataService {
     generalDataEstate: GeneralDataEstate[];
   constructor() { 
     this.generalDataEstate = [
-      new GeneralDataEstate('Apto','Barranquilla','2','2','1','Arriendo',true, true, true),
+      new GeneralDataEstate('1','Apto','Barranquilla','2','2','1','Arriendo',true, true, true),
     ];
    }
    create(generalDataEstateNew: GeneralDataEstate) {
