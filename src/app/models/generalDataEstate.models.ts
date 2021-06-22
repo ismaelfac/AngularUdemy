@@ -9,12 +9,12 @@ export class GeneralDataEstate{
     Tracing: boolean;
     newEstate: boolean;
 
-    constructor(eEstateType: string, eType: string, eStratum: string, eBedrooms: string, eBathrooms: string, eEstateDestination: string, eExclusiveness: boolean, eTracing: boolean, eNewEstate: boolean ){
+    constructor(eEstateType: string, eMunicipality: string, eStratum: string, eBedrooms: string, eBathrooms: string, eEstateDestination: string, eExclusiveness: boolean, eTracing: boolean, eNewEstate: boolean ){
         this.EstateType = eEstateType;
-        this.Municipality = eType;
+        this.Municipality = eMunicipality;
         this.Stratum = eStratum;
-        this.Bathrooms = eBedrooms;
         this.Bedrooms = eBathrooms;
+        this.Bathrooms = eBedrooms;
         this.EstateDestination = eEstateDestination;
         this.Exclusiveness = eExclusiveness;
         this.Tracing = eTracing;

@@ -12,8 +12,10 @@ export class GeneralsDataService {
       new GeneralDataEstate('Apto','Barranquilla','2','2','1','Arriendo',true, true, true),
     ];
    }
-
+   create(generalDataEstateNew: GeneralDataEstate) {
+    this.generalDataEstate.push(generalDataEstateNew);
+  }
    getGeneralDataEstate() {
-     return 
+     return
    }
 }
