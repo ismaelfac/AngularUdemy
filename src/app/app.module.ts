@@ -21,6 +21,7 @@ import { ConditionComponent } from './components/estate/condition/condition.comp
 import { DetailsEstateComponent } from './components/estate/details-estate/details-estate.component';
 import { TemplateComponent } from './components/template/template.component';
 import { ModelComponent } from './components/model/model.component';
+import { GeneralDataFormsComponent } from './components/formsModels/general-data-forms/general-data-forms.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ModelComponent } from './components/model/model.component';
     ConditionComponent,
     DetailsEstateComponent,
     TemplateComponent,
-    ModelComponent
+    ModelComponent,
+    GeneralDataFormsComponent
   ],
   imports: [
     BrowserModule,

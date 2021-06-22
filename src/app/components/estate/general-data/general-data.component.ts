@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class GeneralDataComponent implements OnInit {
 
   generalDataEstateId: number = 0;
+
   constructor(private activateRoute: ActivatedRoute) { }
 
   ngOnInit(): void {

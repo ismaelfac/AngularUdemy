@@ -1,0 +1,79 @@
+<form [formGroup]="frmGeneralData" (ngSubmit)="onSubmit()">
+    <div class="col-8">
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Tipo de Inmueble</span>
+            <select class="form-select" name="cmdEstateType" formControlName="cmdEstateType" aria-label="Default select example">
+                <option value="1">Apartamento</option>
+                <option value="2">Casa</option>
+                <option value="3">Bodega</option>
+            </select>
+            <span class="input-group-text" id="basic-addon1">Ciudad</span>
+            <select class="form-select" name="cmdMunicipality" formControlName="cmdMunicipality" aria-label="Default select example">
+                <option value="1">Barranquilla</option>
+                <option value="2">Soledad</option>
+                <option value="3">Puerto Colombia</option>
+            </select>
+        </div> 
+        <div class="input-group mb-3" >
+            <span class="input-group-text" id="basic-addon1">Estrato</span>
+            <select class="form-select" name="cmdStratum" formControlName="cmdStratum" aria-label="Default select example">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <span class="input-group-text" id="basic-addon1">Habitaciones</span>
+            <select class="form-select" name="cmdBedrooms" formControlName="cmdBedrooms" aria-label="Default select example">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+            <span class="input-group-text" id="basic-addon1">Baños</span>
+            <select class="form-select" name="cmdBathrooms" formControlName="cmdBathrooms" aria-label="Default select example">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon1">Destino Inmueble</span>
+            <select class="form-select" name="cmdEstateDestination" formControlName="cmdEstateDestination" aria-label="Default select example">
+                <option value="1">Venta</option>
+                <option value="2">Arriendo</option>
+                <option value="3">Permuta</option>
+                <option value="4">Todos</option>
+            </select>
+            <div class="form-check form-switch mr-3">
+                <label class="form-check-label" for="ckExclusiveness">Con exclusividad</label>
+                <input class="form-check-input" type="checkbox" id="ckExclusiveness" name="ckExclusiveness" formControlName="ckExclusiveness">
+            </div>
+            
+            <div class="form-check form-switch">
+                <label class="form-check-label" for="ckTracing">Seguimiento</label>
+                <input class="form-check-input" type="checkbox" id="ckTracing" name="ckTracing" formControlName="ckTracing">
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="!frmGeneralData.valid">Enviar</button>
+    </div>
+    <div class="col-4">
+        <div class="form-group">
+            <label for="">Formulario </label>
+            <p>{{ frmGeneralData.value | json }}</p>
+        </div>
+        <div class="form-group">
+            <label for="">Formulario Valido </label>
+            <p>{{ frmGeneralData.valid | json }}</p>
+        </div>
+        <div class="form-group">
+            <label for="">Formulario Invalido </label>
+            <p>{{ frmGeneralData.invalid | json }}</p>
+        </div>
+        <div class="form-group">
+            <label for="">Formulario Dirty </label>
+            <p>{{ frmGeneralData.dirty | json }}</p>
+        </div>
+        <div class="form-group">
+            <label for="">Formulario Untouched </label>
+            <p>{{ frmGeneralData.untouched | json }}</p>
+        </div>
+    </div>
+</form>
