@@ -81,8 +81,8 @@
           <h1 class="h2">Inmuebles</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
-              <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-              <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+              <button type="button" (click)="onClickCreateEstate()" class="btn btn-sm btn-outline-secondary">Crear Inmueble</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Exportar</button>
             </div>
             <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
               <span data-feather="calendar"></span>
@@ -99,6 +99,7 @@
                         <th scope="col">Tipo</th>
                         <th scope="col">Titulo</th>
                         <th scope="col">Destinacion</th>
+                        <th scope="col">Opciones</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -111,6 +112,13 @@
                                 <a href="#" class="btn btn-primary btn-sm active" aria-current="page">Arriendo</a>
                                 <a href="#" class="btn btn-primary btn-sm">Venta</a>
                                 <a href="#" class="btn btn-primary btn-sm">Permuta</a>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-success btn-sm active" aria-current="page">Detalles</a>
+                                <a href="#" class="btn btn-danger btn-sm">Inactivar</a>
+                                <a href="#" class="btn btn-warning btn-sm">Gastos Notariales</a>
                             </div>
                         </td>
                       </tr>
@@ -130,14 +138,34 @@
                         <a class="page-link" href="#">Next</a>
                       </li>
                     </ul>
-                  </nav>
+                </nav>
             </ng-template>
             <ng-template #NotEstates>
                 <p>No existen datos</p>
             </ng-template>            
         </div>
-        <ng-template *ngIf="optEstate" #optEstate>
-            <p>Visualizacion de opciones</p>
+        <ng-template [ngIf]="optEstate" #optEstate>
+            <h5>Wizard</h5>
+            <aw-wizard>
+                <aw-wizard-step stepTitle="Datos Generales">
+                    <div>
+                        <general-data></general-data>
+                    </div>
+                  <button type="button" class="btn btn-success btn-sm" awNextStep>Next Step</button>
+                  <button type="button" class="btn btn-success btn-sm" >Go directly to third Step</button>
+                </aw-wizard-step>
+                <aw-wizard-step stepTitle="Ubicacion">
+                  Content of Step 2
+                  <button type="button" class="btn btn-success btn-sm" awPreviousStep>Go to previous step</button>
+                  <button type="button" class="btn btn-success btn-sm" awNextStep>Go to next step</button>
+                </aw-wizard-step>
+                <aw-wizard-step stepTitle="Condiciones">
+                  Content of Step 3
+                  <button type="button" class="btn btn-success btn-sm" awPreviousStep>Previous Step</button>
+                  <button type="button" class="btn btn-success btn-sm" (click)="finishFunction()">Finish</button>
+                </aw-wizard-step>
+              </aw-wizard>
+              
         </ng-template>
       </main>
     </div>

@@ -1,5 +1,5 @@
 <form [formGroup]="frmGeneralData" (ngSubmit)="onSubmit()">
-    <div class="col-8">
+    <div class="col-12">
         <div class="input-group mb-3">
             <span class="input-group-text" id="basic-addon1">Tipo de Inmueble</span>
             <select class="form-select" name="cmdEstateType" formControlName="cmdEstateType" aria-label="Default select example">
@@ -54,7 +54,7 @@
         </div>
         <button class="btn btn-primary" type="submit" [disabled]="!frmGeneralData.valid">Enviar</button>
     </div>
-    <div class="col-4">
+    <div class="col-12" *ngIf="debug">
         <div class="form-group">
             <label for="">Formulario </label>
             <p>{{ frmGeneralData.value | json }}</p>

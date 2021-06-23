@@ -10,7 +10,8 @@ import { EstatesService } from 'src/app/services/estates.service';
 export class EstateComponent implements OnInit {
   estates: any;
   optEstate: boolean = false;
-  
+  awGoToStep: string = 'Wizard';
+
   constructor(private estateService: EstatesService) { }
 
   ngOnInit(): void {
@@ -21,6 +22,7 @@ export class EstateComponent implements OnInit {
     console.log('evento onClickCreateEstate');
     this.estateService.create(new Estate('4','APTO CASA REAL', 'APTO1', 5, true));
     this.estateService.create(new Estate('5','APTO CASA REAL', 'APTO2', 5, false));
+    this.optEstate = true;
   }
 
   async onClickAssets(): Promise<any> {
@@ -30,6 +32,10 @@ export class EstateComponent implements OnInit {
     } catch (e) {
       console.log(e);
     }
+  }
+
+  finishFunction(): void {
+    console.log('finalizado');
   }
 
 }

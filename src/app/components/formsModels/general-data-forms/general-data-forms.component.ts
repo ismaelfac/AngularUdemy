@@ -11,6 +11,7 @@ import { GeneralsDataService } from 'src/app/services/generals-data.service';
 export class GeneralDataFormsComponent implements OnInit {
   @Input() EstateId: string = '';
   frmGeneralData: FormGroup;
+  debug: boolean = false;
   cmdEstateType: string = '';
   tipo_inmueble: [] = [];
   cmdMunicipality: string = '';

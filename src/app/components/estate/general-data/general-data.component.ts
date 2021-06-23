@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-general-data',
+  selector: 'general-data',
   templateUrl: './general-data.component.html',
   styleUrls: ['./general-data.component.css']
 })
