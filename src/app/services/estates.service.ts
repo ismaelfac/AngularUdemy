@@ -11,9 +11,11 @@ export class EstatesService {
 
   constructor() { 
       this.estates = [
-        new Estate('1','CASA DE 2 PISOS ANDA LUCIA EST4', 'CASA', 2 , true),
-        new Estate('2','APTO LAS TRINITARIAS EST4', 'APTO', 8, true),
-        new Estate('3','BODEGA VIA 40 450MTS', 'BODEGA', 15, false),
+        new Estate('1','CASA DE 2 PISOS ANDA LUCIA EST4', 'CASA', 2 , true, false, false, true),
+        new Estate('2','APTO LAS TRINITARIAS EST4', 'APTO', 8, false, true, false, true),
+        new Estate('3','APTO PORVENIR EST5', 'APTO', 8, true, true, false, true),
+        new Estate('4','BODEGA VIA 40 450MTS', 'BODEGA', 15, false, true, true, false),
+        new Estate('5','BODEGA VIA SOFIA 1450MTS', 'BODEGA', 2, true, false, false, false),
       ];
    }
 

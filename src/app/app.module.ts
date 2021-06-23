@@ -23,6 +23,8 @@ import { DetailsEstateComponent } from './components/estate/details-estate/detai
 import { TemplateComponent } from './components/template/template.component';
 import { ModelComponent } from './components/model/model.component';
 import { GeneralDataFormsComponent } from './components/formsModels/general-data-forms/general-data-forms.component';
+import { RentComponent } from './components/estate/rent/rent.component';
+import { SaleComponent } from './components/estate/sale/sale.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { GeneralDataFormsComponent } from './components/formsModels/general-data
     DetailsEstateComponent,
     TemplateComponent,
     ModelComponent,
-    GeneralDataFormsComponent
+    GeneralDataFormsComponent,
+    RentComponent,
+    SaleComponent
   ],
   imports: [
     BrowserModule,

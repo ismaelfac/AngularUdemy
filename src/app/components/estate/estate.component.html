@@ -86,7 +86,7 @@
             </div>
             <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
               <span data-feather="calendar"></span>
-              This week
+              Esta Semana
             </button>
           </div>
         </div>
@@ -109,16 +109,15 @@
                         <td>{{ item.title}}</td>
                         <td>
                             <div class="btn-group">
-                                <a href="#" class="btn btn-primary btn-sm active" aria-current="page">Arriendo</a>
-                                <a href="#" class="btn btn-primary btn-sm">Venta</a>
-                                <a href="#" class="btn btn-primary btn-sm">Permuta</a>
+                                <button class="btn btn-primary btn-sm" aria-current="page" *ngIf="item.isRent" (click)="onClickIsRent()">Arriendo</button>
+                                <button class="btn btn-warning btn-sm" *ngIf="item.isSale" (click)="onClickIsSale()">Venta</button>
+                                <button class="btn btn-danger btn-sm" *ngIf="item.isBarter" (click)="onClickIsBarter()">Permuta</button>
                             </div>
                         </td>
                         <td>
                             <div class="btn-group">
-                                <a href="#" class="btn btn-success btn-sm active" aria-current="page">Detalles</a>
-                                <a href="#" class="btn btn-danger btn-sm">Inactivar</a>
-                                <a href="#" class="btn btn-warning btn-sm">Gastos Notariales</a>
+                                <button class="btn btn-success btn-sm active" aria-current="page">Detalles</button>
+                                <button class="btn btn-danger btn-sm">Inactivar</button>
                             </div>
                         </td>
                       </tr>
@@ -144,7 +143,7 @@
                 <p>No existen datos</p>
             </ng-template>            
         </div>
-        <ng-template [ngIf]="optEstate" #optEstate>
+        <div *ngIf="optEstate">
             <h5>Wizard</h5>
             <aw-wizard>
                 <aw-wizard-step stepTitle="Datos Generales">
@@ -165,8 +164,16 @@
                   <button type="button" class="btn btn-success btn-sm" (click)="finishFunction()">Finish</button>
                 </aw-wizard-step>
               </aw-wizard>
-              
-        </ng-template>
+        </div>
+        <div *ngIf="optRent">
+          <rent></rent>
+        </div>
+        <div *ngIf="optSale">
+          <sale></sale>
+        </div>
+        <div *ngIf="optBarter">
+          <p>Opt Barter</p>
+        </div>
       </main>
     </div>
   </div>
