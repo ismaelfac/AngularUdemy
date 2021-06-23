@@ -9,6 +9,8 @@ import { EstatesService } from 'src/app/services/estates.service';
 })
 export class EstateComponent implements OnInit {
   estates: any;
+  optEstate: boolean = false;
+  
   constructor(private estateService: EstatesService) { }
 
   ngOnInit(): void {

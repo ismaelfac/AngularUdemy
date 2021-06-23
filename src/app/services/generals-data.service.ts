@@ -6,16 +6,15 @@ import { GeneralDataEstate } from '../models/generalDataEstate.models';
 })
 export class GeneralsDataService {
 
-    generalDataEstate: GeneralDataEstate[];
+  generalDataEstate: GeneralDataEstate[];
+
   constructor() { 
-    this.generalDataEstate = [
-      new GeneralDataEstate('1','Apto','Barranquilla','2','2','1','Arriendo',true, true, true),
-    ];
-   }
+    this.generalDataEstate = [];
+  }
    create(generalDataEstateNew: GeneralDataEstate) {
     this.generalDataEstate.push(generalDataEstateNew);
   }
-   getGeneralDataEstate() {
-     return
-   }
+  getGeneralDataEstate() {
+     return this.generalDataEstate;
+  }
 }

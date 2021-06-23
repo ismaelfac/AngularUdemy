@@ -57,7 +57,19 @@ export class GeneralDataFormsComponent implements OnInit {
     //'1','Apto','Barranquilla','2','2','1','Arriendo',true, true, true
     console.log('Este es el Id: '+this.EstateId);
     console.log(this.frmGeneralData.value.cmdEstateType);
-    this.generalsDataService.create(new GeneralDataEstate('1','Apto','Barranquilla','2','2','1','Arriendo',true, true, true));
+    this.generalsDataService.create(new GeneralDataEstate(
+        this.EstateId, 
+        this.frmGeneralData.value.cmdEstateType,
+        this.frmGeneralData.value.cmdMunicipality,
+        this.frmGeneralData.value.cmdStratum,
+        this.frmGeneralData.value.cmdBedrooms,
+        this.frmGeneralData.value.cmdBathrooms,
+        this.frmGeneralData.value.cmdEstateDestination,
+        this.frmGeneralData.value.ckExclusiveness,
+        this.frmGeneralData.value.ckTracing,
+        this.frmGeneralData.value.ckNewEstate
+      ));
+      console.log(this.generalsDataService.getGeneralDataEstate());
   }
 
 }
