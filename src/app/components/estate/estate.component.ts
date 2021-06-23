@@ -9,6 +9,7 @@ import { EstatesService } from 'src/app/services/estates.service';
 })
 export class EstateComponent implements OnInit {
   estates: any;
+  loading: boolean = false;
   optEstate: boolean = false;
   optRent: boolean = false;
   optSale: boolean = false;
@@ -22,10 +23,12 @@ export class EstateComponent implements OnInit {
   }
 
   onClickCreateEstate(): void {
+    this.loading = true;
     console.log('evento onClickCreateEstate');
     this.estateService.create(new Estate('4','APTO CASA REAL', 'APTO1', 5, true, false, false, true));
     this.estateService.create(new Estate('5','APTO CASA REAL', 'APTO2', 5, true, true, false, false));
     this.optEstate = true;
+    this.loading = false;
   }
 
   async onClickAssets(): Promise<any> {

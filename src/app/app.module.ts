@@ -25,6 +25,7 @@ import { ModelComponent } from './components/model/model.component';
 import { GeneralDataFormsComponent } from './components/formsModels/general-data-forms/general-data-forms.component';
 import { RentComponent } from './components/estate/rent/rent.component';
 import { SaleComponent } from './components/estate/sale/sale.component';
+import { LoadingComponent } from './components/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { SaleComponent } from './components/estate/sale/sale.component';
     ModelComponent,
     GeneralDataFormsComponent,
     RentComponent,
-    SaleComponent
+    SaleComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

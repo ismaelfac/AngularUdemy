@@ -6,7 +6,7 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">
                 <span data-feather="home"></span>
-                Inmuebles
+                Inmuebles1
               </a>
             </li>
             <li class="nav-item">
@@ -91,6 +91,7 @@
           </div>
         </div>
         <div class="table-responsive">
+            <loading *ngIf="loading"></loading>
             <ng-template [ngIf]="estates.length > 0" [ngIfElse]="NotEstates">
                 <table class="table table-hover table-sm">
                     <thead class="table-dark">
@@ -109,7 +110,7 @@
                         <td>{{ item.title}}</td>
                         <td>
                             <div class="btn-group">
-                                <button class="btn btn-primary btn-sm" aria-current="page" *ngIf="item.isRent" (click)="onClickIsRent()">Arriendo</button>
+                                <button class="btn btn-primary btn-sm" *ngIf="item.isRent" (click)="onClickIsRent()">Arriendo</button>
                                 <button class="btn btn-warning btn-sm" *ngIf="item.isSale" (click)="onClickIsSale()">Venta</button>
                                 <button class="btn btn-danger btn-sm" *ngIf="item.isBarter" (click)="onClickIsBarter()">Permuta</button>
                             </div>
@@ -169,7 +170,7 @@
           <rent></rent>
         </div>
         <div *ngIf="optSale">
-          <sale></sale>
+          <sale EstateId="1"></sale>
         </div>
         <div *ngIf="optBarter">
           <p>Opt Barter</p>
