@@ -1,0 +1,17 @@
+<div>
+    <h3 class="title">Lista de videos</h3>
+</div>
+<div class="divider"></div>
+<div>
+    <ul class="favorite-list">
+        <li *ngFor="let favorite of ListCard">
+            <div class="card">
+                <img [src]="favorite?.data?.img" alt="" class="image" style="width: 50px;">
+                <div class="wrapper-text">
+                    <div class="title">{{ favorite?.data?.title}}</div>
+                    <div class="sub-title">{{ favorite?.data?.subtitle }}</div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

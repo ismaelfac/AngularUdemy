@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ArchwizardModule } from 'angular-archwizard';
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +27,10 @@ import { GeneralDataFormsComponent } from './components/formsModels/general-data
 import { RentComponent } from './components/estate/rent/rent.component';
 import { SaleComponent } from './components/estate/sale/sale.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { HeaderComponent } from './components/header/header.component';
+import { CardComponent } from './components/card/card.component';
+import { ListCardComponent } from './components/list-card/list-card.component';
 
 @NgModule({
   declarations: [
@@ -48,10 +53,15 @@ import { LoadingComponent } from './components/loading/loading.component';
     GeneralDataFormsComponent,
     RentComponent,
     SaleComponent,
-    LoadingComponent
+    LoadingComponent,
+    SidebarComponent,
+    HeaderComponent,
+    CardComponent,
+    ListCardComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
